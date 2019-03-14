@@ -1,0 +1,70 @@
+import java.util.*;
+public class BubbleSort{
+	void bubbleSort(int arr[]){
+		int n = arr.length;
+		for (int i = 0; i < n-1; i++)
+			for (int j = 0; j < n-i-1; j++)
+				if (arr[j] > arr[j+1]){// swap temp and arr[i]
+					int temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+                }
+    }
+	/* Prints the array */
+	void printArray(int arr[]){
+		int n = arr.length;
+		for (int i=0; i<n; ++i){
+			System.out.print(" "+arr[i]);
+		}
+		System.out.println();
+	}
+	public static void nama(){
+		System.out.println(" Nama\n 1) Dimas Bayu Aji\n 2) Nisvy Sya'bana Nugraha\n");
+	}
+	// Driver method to test above
+	public static void main(String args[]){
+		Scanner s = new Scanner(System.in);
+		int n;
+		nama();
+		BubbleSort ob = new BubbleSort();
+		do{
+			System.out.print(" Masukkan jumlah data\t: ");
+			n = s.nextInt();
+		}while(n<1);
+		System.out.println();
+		int arr[] = new int[n];
+		for(int i=0;i<n;i++){
+			System.out.print(" Masukkan data ke-"+(i+1)+"\t: ");
+			arr[i]=s.nextInt();
+		}
+		System.out.print("\n Data yang dimasukkan\t: ");
+		for (int i=0;i<n;i++){
+			System.out.print(arr[i]+" ");
+		}
+		ob.bubbleSort(arr);
+		System.out.print("\n Data setelah diurutkan\t:");
+		ob.printArray(arr);
+	}
+}
+/*
+Scanner input = new Scanner(system.in);// User input
+
+System.out.println("Enter Values :");
+
+int array[]=new int[5]; // Intilized array of size 5
+
+for (int i=0;i<5;i++) // used for loop for user input
+
+{
+
+array[i]=input.nextInt(); // Assigned users value to array
+
+}
+
+for (int i=0;i<5;i++) // for loop to display values
+
+{
+
+System.out.println("Values are :"+array[i]);
+
+}
